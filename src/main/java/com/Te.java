@@ -3,6 +3,7 @@ package com;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Te {
     public static void main(String[] args) {
@@ -13,6 +14,11 @@ public class Te {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } finally {
+            try {
+                fileInputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
